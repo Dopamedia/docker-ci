@@ -25,6 +25,10 @@ RUN docker-php-ext-install \
   soap \
   xsl \
   zip
+  
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
+VOLUME /root/.composer/cache  
 
 RUN curl -sS https://getcomposer.org/installer | \
   php -- --install-dir=/usr/local/bin --filename=composer
